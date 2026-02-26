@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Отклик на вакансию</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <p class="eyebrow">Карьерный портал</p>
+      <h1>Подача резюме на вакансии</h1>
+      <p class="subtitle">Заполните форму, прикрепите файл и отправьте заявку в HR.</p>
+    </section>
+
+    <section class="card" aria-label="Форма подачи резюме">
+      <form id="resumeForm" novalidate>
+        <div class="grid">
+          <label class="field">
+            <span>ФИО</span>
+            <input id="fullName" name="fullName" type="text" placeholder="Иванов Иван Иванович" required>
+          </label>
+
+          <label class="field">
+            <span>Телефон</span>
+            <input id="phone" name="phone" type="tel" placeholder="+7 (___) ___-__-__" required inputmode="tel">
+          </label>
+
+          <label class="field">
+            <span>Email</span>
+            <input id="email" name="email" type="email" placeholder="candidate@email.com" required>
+          </label>
+
+          <label class="field">
+            <span>Вакансия</span>
+            <select id="vacancy" name="vacancy" required>
+              <option value="" selected disabled>Выберите вакансию</option>
+              <option value="frontend">Frontend Developer</option>
+              <option value="backend">Backend Developer</option>
+              <option value="qa">QA Engineer</option>
+              <option value="pm">Project Manager</option>
+              <option value="analyst">Business Analyst</option>
+            </select>
+          </label>
+        </div>
+
+        <label class="field">
+          <span>Резюме (PDF, DOC, DOCX)</span>
+          <input id="resume" name="resume" type="file" accept=".pdf,.doc,.docx" required>
+        </label>
+
+        <div class="actions">
+          <button class="btn btn-primary" type="submit">Сохранить</button>
+          <button class="btn btn-secondary" type="button" id="helpBtn">Запросить помощь</button>
+        </div>
+
+        <p id="status" class="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>
